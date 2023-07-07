@@ -13,7 +13,7 @@
 
       // เช็คว่าใส่ชื่อวิชามาหรือไม่ ใส่เวลามาเป็นตัวเลขหรือเปล่า
       if (subject === "" || isNaN(duration) || isNaN(time.getTime())) {
-        alert("Please fill in all the fields correctly.");
+        alert("กรุณากรอกข้อมูลให้ถูกต้อง");
         //ถ้าไม่ให้เตือนให้ใส่ใหม่
         return;
       }
@@ -31,7 +31,7 @@
       timeInput.value = "";
 
       // ขึ้นเตือนให้เห็นว่าเพิ่มข้อมูลสำเร็จแล้ว
-      alert("Study session added successfully!");
+      alert("เพิ่มสำเร็จ");
 
      
       // เรียกใช้ฟังชั่นเพื่ออัพเดทข้อมูลที่กรอก
@@ -65,7 +65,7 @@
           var minutesRemaining = Math.floor(timeRemaining / 60000);
           var secondsRemaining = Math.floor((timeRemaining % 60000) / 1000);
           listItem.textContent += " (กำลังจะเริ่มใน " + minutesRemaining + " นาที " + secondsRemaining + " วินาที)";
-            //ถ้าเวลาเหลือมากกว่า 0 ให้ขึ้นว่า in progess
+            //ถ้าเวลาเหลือน้อยกว่า 0 ให้ขึ้นว่า in progess
         } else if (timeRemaining >= -studySession.duration * 60000) {
           listItem.textContent += " (ดำเนินอยู่ในขณะนี้)";
             //และแสดงเวลาที่เหลือในsession นั้นถ้าหากเวลาที่เหลืออยู่น้อยกว่าหรือเท่ากับ 0 และมากกว่าหรือเท่ากับค่าลบของระยะเวลาของ session นั้น
